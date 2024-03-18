@@ -1,0 +1,46 @@
+.site__header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #0074d9;
+  color: #ffffff;
+  margin-bottom: 60px;
+  height: 120px;
+  padding-left: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__links {
+  padding: 20px;
+  margin-left: auto;
+}
+
+.nav__links a {
+  margin-right: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.auth__button {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth__button:hover {
+  background-color: #ffffff;
+  color: #0074d9;
+}

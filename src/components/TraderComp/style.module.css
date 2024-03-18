@@ -1,0 +1,60 @@
+.trader__title {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0074d9;
+}
+
+.inventory__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: all .3s;
+  letter-spacing: 1px;
+
+}
+
+.inventory__item:hover {
+    color: #0070c6;
+    letter-spacing: 1.2px;
+    padding-left: 10px;
+}
+
+.item__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+}
+
+.item__name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.item__price {
+  color: #555;
+  font-size: 16px;
+}
+
+.open__button {
+  background-color: #0074d9;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+  transition: all .3s;
+}
+
+.open__button:hover {
+  background-color: #005ea6;
+}
+
+.total__spins {
+  font-weight: bold;
+}
