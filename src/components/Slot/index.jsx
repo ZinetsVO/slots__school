@@ -9,9 +9,7 @@ import SlotCounter from "react-slot-counter";
 const Slot = () => {
   const { inventory, spins, toggleSpin, setInventory } = useProduct();
   const [cells, setCells] = useState(["S", "P", "I", "N"]); // Initial texts (can be any values)
-  const [buttonWork, setButtonWork] = useState(spins <=0);
-
-  console.log("updated slot", buttonWork)
+  const [buttonWork, setButtonWork] = useState(false);
 
   const spinSlots = () => {
 
@@ -46,16 +44,15 @@ const Slot = () => {
           wonElement.second__index == newValues[3]
         ) {
           setInventory((prevInventory) => [...prevInventory, wonElement]);
-        } else {
-          console.log("loser!");
         }
       }
     } else {
       alert("не достатньо спінів!");
+      setButtonWork(false);
     }
   };
-  console.log("spins: ", spins);
-  console.log(inventory);
+  // console.log("spins: ", spins);
+  // console.log(inventory);
 
   const getRandomFirstElement = () => {
     const options = ["Na", "Mg", "Ca"];
@@ -89,7 +86,7 @@ const Slot = () => {
         ))}
       </div>
       <button
-        disabled={false}
+        disabled={buttonWork}
         className={css.spin__button}
         onClick={spinSlots}
       >

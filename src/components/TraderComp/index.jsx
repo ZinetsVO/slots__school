@@ -7,10 +7,10 @@ import css from "./style.module.css";
 import { useProduct } from "../Context";
 
 const TraderComp = () => {
-  const { inventory, setInventory, spins, setSpins } = useProduct();
+  const { inventory, setInventory, spins, toggleSpin } = useProduct();
   const handleOpenItem = (item, e) => {
     const index = e.target.id;
-    setSpins(spins + item.price);
+    toggleSpin(spins + item.price);
     const updatedInventory = inventory.filter((i, num) => num != index);
     setInventory(updatedInventory);
   };
