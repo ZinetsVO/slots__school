@@ -1,10 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import css from "./style.module.css";
 
+import { useProduct } from "../Context";
+
+
 function Login(props) {
+
+ 
+
+
+  const { handleLogined, toggleSpin } = useProduct();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
 
   function handleLogin(e) {
     e.preventDefault();
@@ -12,6 +22,18 @@ function Login(props) {
     // Once login is successful, you can close the popup
     props.toggle();
   }
+
+  const submitHandler = () => {
+    if (username == "HimichnaGra" && password == "LubluHimiu") {
+      props.toggle;
+      toggleSpin(2)
+      handleLogined(true);
+    
+
+    } else {
+      alert("Пароль або Ім`я не правильне!")
+    }
+  };
 
   return (
     <div className={css.popup}>
@@ -21,7 +43,7 @@ function Login(props) {
           <div className={css.input__group}>
             <label htmlFor="username">Ім`я:</label>
             <input
-            placeholder="ім`я"
+              placeholder="ім`я"
               className={css.input__text}
               type="text"
               id="username"
@@ -32,7 +54,7 @@ function Login(props) {
           <div className={css.input__group}>
             <label htmlFor="password">Пароль:</label>
             <input
-             placeholder="пароль"
+              placeholder="пароль"
               className={css.input__password}
               type="password"
               id="password"
@@ -40,12 +62,16 @@ function Login(props) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className={css.login__button}>
+          <button
+            type="submit"
+            onClick={submitHandler}
+            className={css.login__button}
+          >
             Увійти
           </button>
         </form>
         <button onClick={props.toggle} className={css.close__button}>
-         X
+          X
         </button>
       </div>
     </div>

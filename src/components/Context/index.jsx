@@ -12,8 +12,17 @@ const ProductContext = createContext();
 
 export default function ProductProvider({ children }) {
   const [inventory, setInventory] = useState([]);
-  const [spins, setSpins] = useState(30);
+  const [spins, setSpins] = useState(0);
   const [error, setError] = useState(null);
+  const [logined, setLogined] = useState(false);
+
+  const handleLogined = () => {
+    setLogined(true);
+  };
+
+  const toggleSpin = (a) => {
+    setSpins(a);
+  };
 
   const [seen, setSeen] = useState(false);
 
@@ -25,13 +34,25 @@ export default function ProductProvider({ children }) {
     () => ({
       inventory,
       spins,
-      setSpins,
+      toggleSpin,
       setInventory,
       togglePop,
       seen,
       error,
+      logined,
+      handleLogined,
     }),
-    [inventory, spins, setSpins, setInventory, togglePop, seen, error]
+    [
+      inventory,
+      spins,
+      toggleSpin,
+      setInventory,
+      togglePop,
+      seen,
+      logined,
+      handleLogined,
+      error,
+    ]
   );
 
   return (

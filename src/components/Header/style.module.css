@@ -23,6 +23,9 @@
 .nav__links {
   padding: 20px;
   margin-left: auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .nav__links a {

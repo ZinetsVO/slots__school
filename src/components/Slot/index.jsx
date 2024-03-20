@@ -1,21 +1,24 @@
 "use client";
-import { React, useContext, useState } from "react";
+import { React, useState } from "react";
 import css from "./style.module.css";
 import { salts } from "@/app/data";
 import { useProduct } from "@/components/Context";
 import SlotCounter from "react-slot-counter";
-import flask from "@/app/static/flask.png"
-import Image from "next/image";
+
 
 const Slot = () => {
-  const { inventory, spins, setSpins, setInventory } = useProduct();
+  const { inventory, spins, toggleSpin, setInventory } = useProduct();
   const [cells, setCells] = useState(["S", "P", "I", "N"]); // Initial texts (can be any values)
-  const [buttonWork, setButtonWork] = useState(spins <= 0);
+  const [buttonWork, setButtonWork] = useState(spins <=0);
+
+  console.log("updated slot", buttonWork)
 
   const spinSlots = () => {
+
+ 
     setButtonWork(true);
     if (spins >= 1) {
-      setSpins(spins - 1);
+      toggleSpin(spins - 1);
 
       const newValues = [
         getRandomFirstElement(),
@@ -48,7 +51,7 @@ const Slot = () => {
         }
       }
     } else {
-      alert("not enough spins!");
+      alert("не достатньо спінів!");
     }
   };
   console.log("spins: ", spins);
@@ -70,7 +73,6 @@ const Slot = () => {
 
   return (
     <div className={css.slots__container}>
-      
       <div className={css.slot__row}>
         {cells.map((text, index) => (
           <div className={css.slot__cell}>
@@ -87,11 +89,11 @@ const Slot = () => {
         ))}
       </div>
       <button
-        disabled={buttonWork}
+        disabled={false}
         className={css.spin__button}
         onClick={spinSlots}
       >
-        Spin
+        Крутити
       </button>
     </div>
   );

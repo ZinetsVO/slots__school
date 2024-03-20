@@ -3,29 +3,28 @@
   text-align: center;
   margin-bottom: 40px;
   color: #0074d9;
+  margin-top: 60px;
 }
 
 .inventory__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  transition: all .3s;
+  transition: all 0.3s;
   letter-spacing: 1px;
-
 }
 
 .inventory__item:hover {
-    color: #0070c6;
-    letter-spacing: 1.2px;
-    padding-left: 10px;
+  color: #0070c6;
+  letter-spacing: 1.2px;
+  text-indent: 15px;
 }
 
 .item__text {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px;
 }
 
 .item__name {
@@ -48,7 +47,7 @@
   height: 40px;
   width: 100px;
   font-size: 14px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .open__button:hover {
@@ -57,4 +56,11 @@
 
 .total__spins {
   font-weight: bold;
+}
+
+.emplty__text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  
 }

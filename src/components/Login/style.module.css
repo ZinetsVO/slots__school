@@ -50,12 +50,24 @@
 .input__text {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 10px;
   height: 30px;
   width: 250px;
+  outline: none;
+  background-color: #ededed;
+  border: 0;
+  transition: all .3s;
+  opacity: 0.8;
 }
+
+.input__password:focus,
+.input__text:focus {
+  background-color: #ffffff;
+  opacity: 1;
+} 
+
+
 .login__button,
 .close__button {
   background-color: #0074d9;
@@ -90,3 +102,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.login__button {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.login__button:hover {
+  background-color: #ffffff;
+  color: #0074d9;
+}
+
+
