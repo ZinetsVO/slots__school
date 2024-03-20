@@ -26,7 +26,7 @@ function Login(props) {
   const submitHandler = () => {
     if (username == "HimichnaGra" && password == "LubluHimiu") {
       props.toggle;
-      toggleSpin(2)
+      toggleSpin(20)
       handleLogined(true);
     
 
