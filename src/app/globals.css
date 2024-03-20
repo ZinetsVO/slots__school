@@ -95,6 +95,12 @@ body {
     rgb(var(--background-start-rgb));
 
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: url("../app/static/wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
 a {

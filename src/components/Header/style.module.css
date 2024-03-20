@@ -4,9 +4,9 @@
   align-items: center;
   background-color: #0074d9;
   color: #ffffff;
-  margin-bottom: 60px;
   height: 120px;
   padding-left: 20px;
+  width: 100%;
 }
 
 .logo {
@@ -29,6 +29,11 @@
   margin-right: 20px;
   color: #ffffff;
   text-decoration: none;
+  transition: all .3s;
+}
+
+.nav__links a:hover {
+  color: #fee800;
 }
 
 .auth__button {

@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto 0;
 }
 
 .slot__row {
@@ -10,11 +11,12 @@
   justify-content: center;
   margin-bottom: 40px;
   position: relative;
-  outline: 15px outset red;
+  outline: 15px outset #005ea6;
+  
 }
 .slot__cell {
   font-size: 24px;
-  width: 80px;
+  width: 100px;
   height: 80px;
   text-align: center;
   display: flex;

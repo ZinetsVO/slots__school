@@ -4,23 +4,37 @@ import css from "./style.module.css";
 import { salts } from "@/app/data";
 import { useProduct } from "@/components/Context";
 import SlotCounter from "react-slot-counter";
+import flask from "@/app/static/flask.png"
+import Image from "next/image";
 
 const Slot = () => {
   const { inventory, spins, setSpins, setInventory } = useProduct();
-  const [cells, setCells] = useState(["#", "#", "#", "#"]); // Initial texts (can be any values)
+  const [cells, setCells] = useState(["S", "P", "I", "N"]); // Initial texts (can be any values)
+  const [buttonWork, setButtonWork] = useState(spins <= 0);
 
   const spinSlots = () => {
+    setButtonWork(true);
     if (spins >= 1) {
       setSpins(spins - 1);
+
       const newValues = [
         getRandomFirstElement(),
         getRandomIndex(),
         getRandomSecondElement(),
         getRandomIndex(),
       ];
+      setCells([
+        `${"?".repeat(newValues[0].length)}`,
+        "?",
+        `${"?".repeat(newValues[2].length)}`,
+        "?",
+      ]);
+      setTimeout(() => setCells(newValues), 1500);
       const index = salts.findIndex(
         (el) => el.first__el == newValues[0] && el.second__el == newValues[2]
       );
+
+      setTimeout(() => setButtonWork(spins <= 0), 2200);
 
       if (index >= 0) {
         const wonElement = salts[index];
@@ -33,8 +47,6 @@ const Slot = () => {
           console.log("loser!");
         }
       }
-      setCells(["*", "*", "*", "*"]);
-      setCells(newValues);
     } else {
       alert("not enough spins!");
     }
@@ -58,6 +70,7 @@ const Slot = () => {
 
   return (
     <div className={css.slots__container}>
+      
       <div className={css.slot__row}>
         {cells.map((text, index) => (
           <div className={css.slot__cell}>
@@ -74,7 +87,7 @@ const Slot = () => {
         ))}
       </div>
       <button
-        disabled={spins <= 0}
+        disabled={buttonWork}
         className={css.spin__button}
         onClick={spinSlots}
       >

@@ -12,8 +12,14 @@ const ProductContext = createContext();
 
 export default function ProductProvider({ children }) {
   const [inventory, setInventory] = useState([]);
-  const [spins, setSpins] = useState(30)
+  const [spins, setSpins] = useState(30);
   const [error, setError] = useState(null);
+
+  const [seen, setSeen] = useState(false);
+
+  function togglePop() {
+    setSeen(!seen);
+  }
 
   const contextValue = useMemo(
     () => ({
@@ -21,9 +27,11 @@ export default function ProductProvider({ children }) {
       spins,
       setSpins,
       setInventory,
+      togglePop,
+      seen,
       error,
     }),
-    [inventory, spins, setSpins, setInventory, error]
+    [inventory, spins, setSpins, setInventory, togglePop, seen, error]
   );
 
   return (
