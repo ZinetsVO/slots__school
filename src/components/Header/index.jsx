@@ -21,8 +21,8 @@ const Header = () => {
         <Image src={logo} alt="Chemical Slots" width={120} height={120} />
       </Link>
       <div className={css.count}>
-        <span>spins: {spins}</span>
-        <span>inventory items: {inventory.length}</span>
+        <span>кількість спінів: {spins}</span>
+        <span>кількість солей: {inventory.length}</span>
       </div>
       <nav className={css.nav__links}>
         <Link href="/slots">Слот</Link>
