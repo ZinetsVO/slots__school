@@ -37,15 +37,6 @@
   margin-bottom: 5px;
 }
 
-.login__button {
-  background-color: #0074d9;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .input__password,
 .input__text {
   width: 100%;
@@ -78,10 +69,6 @@
   cursor: pointer;
 }
 
-.login__button {
-  margin: 0 auto;
-}
-
 /* Style for submit button (if needed) */
 .close__button {
   background-color: #0074d9;
@@ -106,6 +93,8 @@
 .login__button {
   background-color: transparent;
   border: 1px solid #ffffff;
+  background-color: #0074d9;
+
   color: #ffffff;
   padding: 5px 10px;
   border-radius: 5px;

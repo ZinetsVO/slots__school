@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: auto 0;
+  position: relative;
 }
 
 .slot__row {
@@ -12,7 +13,6 @@
   margin-bottom: 40px;
   position: relative;
   outline: 15px outset #005ea6;
-  
 }
 .slot__cell {
   width: 150px;
@@ -26,6 +26,7 @@
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   font-weight: bold;
+  cursor: default;
 }
 
 .cell__text {
@@ -52,4 +53,111 @@
 .spin__button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+/* try  */
+
+.second__popup {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.active {
+  display: flex;
+  z-index: 10;
+}
+
+.popup__inner {
+  background-color: #0074d9; /* Blue color */
+  padding: 30px 60px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.second__title {
+  text-indent: 20px;
+  max-width: 5000px;
+}
+
+.second__desc {
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 500px;
+  align-self: stretch;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.close__button {
+  background-color: #0074d9;
+  color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+}
+
+.edit__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.editable__string {
+  font-weight: bold;
+  font-size: 28px;
+  color: #ccc;
+  cursor: default;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.editable__input {
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  outline: none;
+  font-size: 30px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.remake__button {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.remake__button:hover {
+  background-color: #ffffff;
+  color: #0074d9;
 }
