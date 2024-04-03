@@ -5,12 +5,34 @@ import { useState } from "react";
 import { salts } from "@/app/data";
 import css from "./style.module.css";
 import { useProduct } from "../Context";
+import axios from "axios";
+import { URL } from "@/helpers/constants";
+
 
 const TraderComp = () => {
-  const { inventory, setInventory, spins, toggleSpin } = useProduct();
+  const { inventory, setInventory, spins, toggleSpin, users, fetchUsers, loginIndex } = useProduct();
+  const handleUserSpins = (newSpins) => {
+    const formData = {
+      ...users[loginIndex],
+      [`spins`]: newSpins,
+    };
+    try {
+      const response = axios.put(`${URL}/${users[loginIndex].id}`, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      fetchUsers();
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
   const handleOpenItem = (item, e) => {
     const index = e.target.id;
     toggleSpin(spins + item.price);
+    handleUserSpins(spins + item.price)
     const updatedInventory = inventory.filter((i, num) => num != index);
     setInventory(updatedInventory);
   };

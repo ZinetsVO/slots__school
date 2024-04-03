@@ -2,7 +2,7 @@
 
 export const salts = [
   {
-    price: 10,
+    price: 5,
     first__el: "Na",
     second__el: "Cl",
     first__index: 1,
@@ -10,7 +10,7 @@ export const salts = [
     breakdownable: true,
   },
   {
-    price: 20,
+    price: 10,
     first__el: "Na",
     second__el: "SO4",
     first__index: 2,
@@ -19,7 +19,7 @@ export const salts = [
   },
 
   {
-    price: 10,
+    price: 5,
     first__el: "Na",
     second__el: "NO3",
     first__index: 1,
@@ -27,7 +27,7 @@ export const salts = [
     breakdownable: true,
   },
   {
-    price: 20,
+    price: 10,
     first__el: "Mg",
     second__el: "(NO3)",
     first__index: 1,
@@ -36,7 +36,7 @@ export const salts = [
   },
 
   {
-    price: 20,
+    price: 10,
     first__el: "Mg",
     second__el: "Cl",
     first__index: 1,
@@ -45,7 +45,7 @@ export const salts = [
   },
 
   {
-    price: 10,
+    price: 5,
     first__el: "Mg",
     second__el: "SO4",
     first__index: 1,
@@ -53,7 +53,7 @@ export const salts = [
     breakdownable: true,
   },
   {
-    price: 120,
+    price: 30,
     first__el: "Ca",
     second__el: "SO4",
     first__index: 1,
@@ -61,7 +61,7 @@ export const salts = [
     breakdownable: false,
   },
   {
-    price: 20,
+    price: 10,
     first__el: "Ca",
     second__el: "Cl",
     first__index: 1,
@@ -69,7 +69,7 @@ export const salts = [
     breakdownable: true,
   },
   {
-    price: 20,
+    price: 10,
     first__el: "Ca",
     second__el: "NO3",
     first__index: 1,
