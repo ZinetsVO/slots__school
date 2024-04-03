@@ -8,12 +8,12 @@ import Link from "next/link";
 import { useProduct } from "../Context";
 import Login from "../Login";
 import { MdAccountCircle } from "react-icons/md";
-
+import { slide as Menu } from "react-burger-menu";
 
 const Header = () => {
-  const { inventory, spins, togglePop, seen, logined} = useProduct();
+  const { inventory, spins, togglePop, seen, logined } = useProduct();
 
-  console.log('logined: ' ,logined);
+  
 
   return (
     <header className={css.site__header}>
@@ -21,8 +21,8 @@ const Header = () => {
         <Image src={logo} alt="Chemical Slots" width={120} height={120} />
       </Link>
       <div className={css.count}>
-        <span>кількість спінів: {spins}</span>
-        <span>кількість солей: {inventory.length}</span>
+        <span style={{ width: `15ch` }}>кількість спінів: {spins}</span>
+        <span style={{ width: `15ch` }}>кількість солей: {inventory.length}</span>
       </div>
       <nav className={css.nav__links}>
         <Link href="/slots">Слот</Link>
@@ -32,7 +32,7 @@ const Header = () => {
             Увійти
           </button>
         ) : (
-          <MdAccountCircle size={30}/>
+          <MdAccountCircle className={css.loggined__photo} size={30} />
         )}
         {seen && <Login toggle={togglePop} />}
       </nav>

@@ -1,22 +1,45 @@
 "use client";
-import { React, useState } from "react";
+import { React, useCallback, useEffect, useState } from "react";
 import css from "./style.module.css";
 import { salts } from "@/app/data";
 import { useProduct } from "@/components/Context";
 import SlotCounter from "react-slot-counter";
 import { MdWidthFull } from "react-icons/md";
+import axios from "axios";
+import { URL } from "@/helpers/constants";
 
 const Slot = () => {
-  const { inventory, spins, toggleSpin, setInventory } = useProduct();
+  const { inventory, spins, toggleSpin, setInventory, loginIndex, users,
+    fetchUsers } =
+    useProduct();
   const [cells, setCells] = useState(["S", "P", "I", "N"]); // Initial texts (can be any values)
   const [buttonWork, setButtonWork] = useState(false);
   const [secondTryShow, setSecondTryPopup] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
 
+  const handleUserSpins = (newSpins) => {
+    const formData = {
+      ...users[loginIndex],
+      [`spins`]: newSpins,
+    };
+    try {
+      const response = axios.put(`${URL}/${users[loginIndex].id}`, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      fetchUsers();
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const spinSlots = () => {
     setButtonWork(true);
     if (spins >= 1) {
       toggleSpin(spins - 1);
+      handleUserSpins(spins - 1);
 
       const newValues = [
         getRandomFirstElement(),
@@ -103,6 +126,8 @@ const Slot = () => {
     ) {
       alert("Ти повернув свій спін назад :)");
       toggleSpin(spins + 1);
+      handleUserSpins(spins + 1);
+
     } else {
       alert("Не правильно :( Вчи хімію краще, щоб наступного разу вдалося");
     }

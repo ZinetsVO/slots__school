@@ -14,6 +14,7 @@
   position: relative;
   outline: 15px outset #005ea6;
 }
+
 .slot__cell {
   width: 150px;
   height: 120px;
@@ -160,4 +161,16 @@
 .remake__button:hover {
   background-color: #ffffff;
   color: #0074d9;
+}
+
+@media screen and (max-width: 600px) {
+  .slot__row {
+    width: 86vw;
+    height: 24vw;
+  }
+
+  .slot__cell {
+    width: 21,5vw;
+    height: 24vw;
+  }
 }

@@ -1,4 +1,6 @@
 "use client";
+
+import axios from "axios";
 import React, {
   createContext,
   useContext,
@@ -8,6 +10,8 @@ import React, {
   useMemo,
 } from "react";
 
+import { URL } from "@/helpers/constants";
+
 const ProductContext = createContext();
 
 export default function ProductProvider({ children }) {
@@ -15,6 +19,24 @@ export default function ProductProvider({ children }) {
   const [spins, setSpins] = useState(0);
   const [error, setError] = useState(null);
   const [logined, setLogined] = useState(false);
+  const [loginIndex, setloginIndex] = useState(null)
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = useCallback(async () => {
+    try {
+      const response = await axios.get(URL);
+      setUsers(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
 
   const handleLogined = () => {
     setLogined(true);
@@ -41,6 +63,10 @@ export default function ProductProvider({ children }) {
       error,
       logined,
       handleLogined,
+      loginIndex,
+      setloginIndex,
+      users,
+      fetchUsers
     }),
     [
       inventory,
@@ -52,6 +78,10 @@ export default function ProductProvider({ children }) {
       logined,
       handleLogined,
       error,
+      loginIndex,
+      setloginIndex,
+      users,
+      fetchUsers
     ]
   );
 

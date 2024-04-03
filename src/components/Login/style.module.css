@@ -100,11 +100,30 @@
   border-radius: 5px;
   cursor: pointer;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .login__button:hover {
   background-color: #ffffff;
   color: #0074d9;
+}
+
+.register__button {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+  color: #ccc;
+  font-size: 14px;
+  transition: all .3s;
+  cursor: pointer;
+  padding-bottom: 0px;
+
+}
+.register__button:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+
 }
 
 

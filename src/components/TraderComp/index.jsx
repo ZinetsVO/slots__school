@@ -15,8 +15,6 @@ const TraderComp = () => {
     setInventory(updatedInventory);
   };
 
-  console.log(!!inventory);
-
   return (
     <div className="container">
       <h2 className={css.trader__title}>Інвентар</h2>

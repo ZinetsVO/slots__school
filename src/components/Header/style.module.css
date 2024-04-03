@@ -52,3 +52,20 @@
   background-color: #ffffff;
   color: #0074d9;
 }
+
+.count__text {
+  max-width: 400px;
+}
+
+.loggined__photo {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .nav__links {
+    overflow-x: scroll;
+  }
+
+  
+}
