@@ -29,7 +29,7 @@ const Header = () => {
         <Link href="/trader">Розтворювач</Link>
         {!logined ? (
           <button className={css.auth__button} onClick={togglePop}>
-            Увійти
+            Вхід | Реєстрація
           </button>
         ) : (
           <MdAccountCircle className={css.loggined__photo} size={30} />
